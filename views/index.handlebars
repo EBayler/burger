@@ -1,0 +1,18 @@
+<div class="row">
+    <div class="col s6">
+        <div class="card-panel green darken-3">
+            <h4 class="yellow-text text-darken-3 flow-text">You Know You Want To Eat Me</h4>
+        </div>
+        <ul class="collection">
+            {{#each burgers}} {{#unless devoured}} {{> burgers/burger-block devoured=false}} {{/unless}} {{/each}}
+        </ul>
+    </div>
+    <div class="col s6">
+        <div class="card-panel green darken-3">
+            <h4 class="yellow-text text-darken-3 flow-text">I've Already Been Nommed</h4>
+        </div>
+        <ul class="collection">
+            {{#each burgers}} {{#if devoured}} {{> burgers/burger-block devoured=true}} {{/if}} {{/each}}
+        </ul>
+    </div>
+</div>
