@@ -1,8 +1,10 @@
+var mysql = require("mysql");
+var connection;
 
- var connection;
-
- if (process.env.JAWSDB_URL) {
+if (process.env.JAWSDB_URL) {
+     
      var connection = require("../config/connection.js");
+
 } else {
     connection = mysql.createConnection({
         port: 3306,
@@ -12,8 +14,6 @@
         database: "burgers_db"
     });
 }
-
-
  
  var orm = {
      selectAll: function (tableInput, cb) {
